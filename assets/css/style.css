@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+/* General styling */
+
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+
+header {
+    height: 90px;
+    width: 100%;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* Styling classes */
+
+.absolute {
+    position: absolute;
+}
+
+.absolute-right-center {
+    position: absolute;
+    left: 90%;
+    top: 25px;
+}
+
+.btn-add {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+.container-tall {
+    height: 500px;  
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.flex-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-start-wrap {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.grow-1 {
+    flex-grow: 1;
+}
+
+.max-width-100p {
+    max-width: 100%;
+    overflow: visible;
+}
+
+.max-width-150 {
+    max-width: 150px;
+}
+
+.margin-20 {
+    margin: 20px;
+}
+
+.margin-bot-10 {
+    margin-bottom: 10px;
+}
+
+.shared-width {
+    width: 33%;
+}
+
+.side-borders {
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+.stretch {
+    align-items: stretch;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.thumbnail {
+    width: 130px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.width-100p {
+    width: 100%;
+}
+
+/* ID styling */
