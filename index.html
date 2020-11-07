@@ -9,19 +9,21 @@
 <body>
     <header class="">
         <h1 class="text-center absolute width-100p">&#x1F4DA; Juan the Librarian</h1>
-        <button class="btn-add absolute-right-center">Add +</button>
+        <button class="btn-add absolute-right-center" id="addBtn">Add +</button>
     </header>
     <div class="flex-around stretch">
         <div class="grow-1 text-center shared-width">
             <div>
                 <h2>To Read</h2>
             </div>
-            <div class="flex-start-wrap container-tall">
-                <div class="margin-20 max-width-150 flex-column-center">
-                    <div class="margin-bot-10">
-                        <img class="image-fit thumbnail" src="assets/images/book.jpg" alt="book cover">
+            <div class="flex-start-wrap container-tall" id="toReadList">
+                <div class="margin-20 max-width-150 flex-column-center" id="book">
+                    <span class="btn-close">&#x1F4D6;</span>
+                    <span class="btn-close">&times;</span>
+                    <div class="margin-bot-10" id="thumbnail-box">
+                        <img class="thumbnail" src="assets/images/book.jpg" alt="book cover">
                     </div>
-                    <div>
+                    <div id="info-box">
                         <div class="text-center">Title Lorem</div>
                         <div class="text-center">Author ethereus novem lorem ipsum</div>
                     </div>
@@ -43,5 +45,44 @@
             </div>
         </div>
     </div>
+ 
+    <div id="addBookModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <h2 class="text-center">New Book</h3>
+            <hr>
+            <form class="padding-10 width-80p flex-column-space height-80p" action="">
+                <div class="width-100p">
+                    <label class="margin-10" for="title">Title</label><br>
+                    <input class="width-100p margin-10" type="text" id="title" name="title"><br>
+                </div>
+                <div class="width-100p">
+                    <label class="margin-10" for="author">Author</label><br>
+                    <input class="width-100p margin-10" type="text" id="author" name="author"><br>
+                </div>
+                <div class="width-100p">
+                    <label class="margin-10" for="pages">Number of pages</label><br>
+                    <input class="margin-10 width-100p" type="number" id="pages" name="pages"><br>
+                </div>
+                <div class="width-100p">
+                    <label class="margin-10" for="status">Read Status</label>
+                    <div class="flex-around margin-10">
+                        <input type="radio" id="toRead" name="status" value="toRead">
+                        <label for="toRead">To Read</label>
+                        <input type="radio" id="inProgess" name="status" value="inProgress">
+                        <label for="inProgress">In Progress</label>
+                        <input type="radio" id="read" name="status" value="read">
+                        <label for="read">Read</label>
+                    </div>
+                </div>
+                <div class="flex-center margin-10 width-100p">
+                    <input id="submit" type="submit" value="Submit">
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts/index.js"></script>
 </body>
 </html>
