@@ -48,6 +48,7 @@ function addBookToLibrary() {
 myLibrary.forEach((book, index) => {
 
     let newBook = document.createElement('div');
+    let newToolbar = document.createElement('div');
     let newClose = document.createElement('span');
     let newRead = document.createElement('span');
     let newThumbnailBox = document.createElement('div');
@@ -56,12 +57,14 @@ myLibrary.forEach((book, index) => {
     let newAuthor = document.createElement('div');
     let newImage = document.createElement('img');
     
-    newRead.innerHTML = "\u1F4D6";
-    newClose.innerHTML = "\u00D7";
+    newRead.innerHTML = '\u{1F4D8}';
+    newClose.innerHTML = '\u00D7';
     newTitle.innerText = book.title;
     newAuthor.innerText = book.author;
 
     newBook.classList.add('margin-20', 'max-width-150', 'flex-column-center');
+    newToolbar.classList.add('flex-end', 'width-100p');
+    newRead.classList.add('btn-read', 'margin-right-10');
     newClose.classList.add('btn-close');
     newClose.dataset.book = index;
     newThumbnailBox.classList.add('margin-bot-10');
@@ -74,7 +77,9 @@ myLibrary.forEach((book, index) => {
     newInfoBox.appendChild(newTitle);
     newInfoBox.appendChild(newAuthor);
     newThumbnailBox.appendChild(newImage);
-    newBook.appendChild(newClose);
+    newToolbar.appendChild(newRead);
+    newToolbar.appendChild(newClose);
+    newBook.appendChild(newToolbar);
     newBook.appendChild(newThumbnailBox);
     newBook.appendChild(newInfoBox);
     toreadList.appendChild(newBook);

@@ -7,9 +7,9 @@
     <Title>Library</Title>
 </head>
 <body>
-    <header class="">
-        <h1 class="text-center absolute width-100p">&#x1F4DA; Juan the Librarian</h1>
-        <button class="btn-add absolute-right-center" id="addBtn">Add +</button>
+    <header class="flex-end">
+        <h1 class="text-center width-100p margin-bot-10">&#x1F4DA; Juan the Librarian</h1>
+        <button class="btn-add margin-right-10 shrink-2" id="addBtn">Add +</button>
     </header>
     <div class="flex-around stretch">
         <div class="grow-1 text-center shared-width">
@@ -18,8 +18,10 @@
             </div>
             <div class="flex-start-wrap container-tall" id="toReadList">
                 <div class="margin-20 max-width-150 flex-column-center" id="book">
-                    <span class="btn-close">&#x1F4D6;</span>
-                    <span class="btn-close">&times;</span>
+                    <div class="flex-end width-100p" id="book-toolbar">
+                        <span class="btn-read margin-right-10">&#x1F4D8;</span>
+                        <span class="btn-close margin-right-10">&times;</span>
+                    </div>
                     <div class="margin-bot-10" id="thumbnail-box">
                         <img class="thumbnail" src="assets/images/book.jpg" alt="book cover">
                     </div>

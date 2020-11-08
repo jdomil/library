@@ -18,19 +18,10 @@ img {
 
 /* Styling classes */
 
-.absolute {
-    position: absolute;
-}
-
-.absolute-right-center {
-    position: absolute;
-    left: 90%;
-    top: 25px;
-}
-
 .btn-add {
     color: #fff;
     background-color: #28a745;
+    height: 80%;
     border-color: #28a745;
     padding: 10px;
     font-size: 20px;
@@ -40,10 +31,19 @@ img {
 
 .btn-close {
     color: red;
-    position: relative;
-    left: 60px;
     font-size: 28px;
     font-weight: bold;
+}
+
+.btn-read {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.btn-read:hover,
+.btn-read:focus {
+    font-size: 22px;
+    cursor: pointer;
 }
 
 .btn-close:hover,
@@ -69,6 +69,11 @@ img {
 .flex-center {
     display: flex;
     justify-content: center;
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .flex-column-center {
@@ -120,6 +125,10 @@ img {
     margin-bottom: 10px;
 }
 
+.margin-right-10 {
+    margin-right: 10px;
+}
+
 .modal-content {
     position: absolute;
     width: 25%;
@@ -138,6 +147,10 @@ img {
 
 .shared-width {
     width: 33%;
+}
+
+.shrink-2 {
+    flex-shrink: 2;
 }
 
 .side-borders {
