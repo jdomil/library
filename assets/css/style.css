@@ -37,8 +37,19 @@ img {
     font-weight: bold;
 }
 
-.btn-read {
+.btn-inprogress {
     font-size: 20px;
+    margin-top: 5px;
+}
+
+.btn-inprogress:hover,
+.btn-inprogress:focus {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.btn-read {
+    font-size: 18px;
     margin-top: 5px;
 }
 
