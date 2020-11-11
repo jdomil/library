@@ -1,7 +1,4 @@
 // Constant declaration
-const toreadList = document.getElementById('toReadList');
-const inProgressList = document.getElementById('inProgressList');
-const finishedList = document.getElementById('finishedList');
 const addBtn = document.getElementById('addBtn');
 const bookModal = document.getElementById('addBookModal');
 const span = document.getElementById('closeModal');
@@ -51,7 +48,10 @@ function addBookToLibrary() {
 
 // Populate DOM with each book
 function addToDom(book) {
-    console.log('Hi!');
+    const toreadList = document.getElementById('toReadList');
+    const inProgressList = document.getElementById('inProgressList');
+    const finishedList = document.getElementById('finishedList');
+
     // Elements declaration
     const newBook = document.createElement('div');
     const newToolbar = document.createElement('div');
@@ -108,6 +108,7 @@ function addToDom(book) {
     // Append to correct swimlane
     switch (book.readStatus) {
         case 'inProgress':
+            console.log('inProgress');
             inProgressList.appendChild(newBook);
             break;
 
@@ -124,7 +125,6 @@ function addToDom(book) {
     closeButtons.push(newClose);
     inProgressButtons.push(newInProgress);
     readButtons.push(newRead);
-    enableBtns();
 }
 
 // Delete book function
@@ -140,12 +140,12 @@ function deleteBook(e) {
 function moveBookInProgress(e) {
     const index = e.target.dataset.book;
     console.log(index);
-    console.log(myLibrary[index].readStatus);
     if (myLibrary[index].readStatus == 'inProgress') return;
-
+    
     myLibrary[index].readStatus = 'inProgress';
-    addToDom(myLibrary[index]);
     const bookToMove = document.querySelector('div[data-book="' + index +'"]');
+    addToDom(myLibrary[index]);
+    console.log(bookToMove);
     bookToMove.remove();
 }
 
@@ -155,32 +155,21 @@ function moveBookRead(e) {
     if (myLibrary[index].readStatus == 'read') return;
 
     myLibrary[index].readStatus = 'read';
-    addToDom(myLibrary[index]);
     const bookToMove = document.querySelector('div[data-book="' + index +'"]');
+    addToDom(myLibrary[index]);
     bookToMove.remove();
 }
 
 
 // Enable toolbar buttons
-function enableBtns() {
-    closeButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            deleteBook(e);
-        });
-    });
-
-    inProgressButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            moveBookInProgress(e);
-        });
-    });
-
-    readButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            moveBookRead(e);
-        });
-    });
-}
+document.body.addEventListener('click', (e) => {
+    if (e.target.className.includes('inprogress'))
+        moveBookInProgress(e);
+    if (e.target.className.includes('read'))
+        moveBookRead(e);
+    if (e.target.className.includes('close'))
+        deleteBook(e);
+})
 
 // Modal functionality
 addBtn.onclick = () => {
@@ -204,8 +193,6 @@ bookForm.addEventListener('submit', (e) => {
     addBookToLibrary();
     bookForm.reset();
 });
-
-enableBtns();
 
 
 
