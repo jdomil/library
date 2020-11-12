@@ -1,3 +1,25 @@
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+    apiKey: "AIzaSyAr1230KBq7wg_mITKAUoPurviqVxcsF_E",
+    authDomain: "library-58816.firebaseapp.com",
+    databaseURL: "https://library-58816.firebaseio.com",
+    projectId: "library-58816",
+    storageBucket: "library-58816.appspot.com",
+    messagingSenderId: "112152344387",
+    appId: "1:112152344387:web:e4c47020676d463d2221f6",
+    measurementId: "G-FJQEB980KD"
+  };
+
+const firebase = require("firebase");
+// Required for side-effects
+require("firebase/firestore");
+  
+// Initialize Cloud Firestore through Firebase
+firebase.initializeApp(firebaseConfig);
+  
+var db = firebase.firestore();
+  
+
 // Constant declaration
 const addBtn = document.getElementById('addBtn');
 const bookModal = document.getElementById('addBookModal');

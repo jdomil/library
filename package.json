@@ -4,5 +4,8 @@
   },
   "scripts": {
     "dev": "lite-server"
+  },
+  "dependencies": {
+    "firebase": "^8.0.1"
   }
 }
